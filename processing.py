@@ -63,16 +63,20 @@ def zip_chroma(extract_folder, chroma_file):
     :return: chroma_file
     """
     # create the zip folder
-    with ZipFile(chroma_file, 'w') as zip:
+    with ZipFile(chroma_file, 'w') as chroma_zip:
         # go through and zip the files in the directory
         for path, directories, files in os.walk(extract_folder):
             for file in files:
-                # report that the file was zipped
-                file_name = os.path.join(path, file)
-                print("\tZipped", file_name)
+                # restore the old file name
+                new_name = file.split("_")[1]
+                new_name_path = os.path.join(path, new_name)
+                os.rename(os.path.join(path, file), new_name_path)
 
                 # write the zip file
-                zip.write(file_name)
+                chroma_zip.write(new_name_path, arcname=new_name)
+
+                # report that the file was zipped
+                print("\tZipped", new_name_path)
 
     # return the filename of the zipped folder
     return chroma_file
@@ -97,9 +101,9 @@ if __name__ == "__main__":
     print("Process the XML:")
 
     chroma_files = os.listdir(chroma_folder)
-    for file in chroma_files:
-        print("Parsing", file + ":")
-        parse_xml(chroma_folder + "\\" + file)
+    for chroma_file in chroma_files:
+        print("Parsing", chroma_file + ":")
+        parse_xml(chroma_folder + "\\" + chroma_file)
 
     print("\n")
 
