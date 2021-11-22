@@ -1,4 +1,4 @@
-# ChromaCC
+# RC3: Razer Chroma Covert Channel
 **RGB Keyboard Covert Channel Implementation**
 
 *Brendan McGlynn, Ian Stroszeck, Wyatt Tauber*
