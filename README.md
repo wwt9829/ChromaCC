@@ -22,4 +22,5 @@ Covert channels exist best in benign environments, where information can be secr
 ## Usage:
 ### processing.py:
 Open the ChromaEffects file, parse the XML, and save the new ChromaEffects file with the parsed XML:
+
 ```./processing.py <ChromaEffects file>```
