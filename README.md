@@ -20,4 +20,4 @@ Covert channels exist best in benign environments, where information can be secr
 [12/1/2021 Final Presentation](https://docs.google.com/presentation/d/1OmoCHqMvZjOzoyObxk5X6gf6WpRhL1m_t9W6NUwXFro/edit?usp=sharing)
 
 ## Usage:
-./processing.py <ChromaEffects file>
+```./processing.py <ChromaEffects file>```
